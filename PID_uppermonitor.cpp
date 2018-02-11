@@ -76,13 +76,84 @@ void PID_uppermonitor::on_pushButton_switch_clicked()
 
 void PID_uppermonitor::on_pushButton_outloopWrite_clicked()
 {
-	QString str = "@#";
-	str += QString("%1").arg(DeviceNumber);
+	changePIDvalue_O();
+	QString str = "@",temp = "";
+	str += DeviceNumber_String;
+	str += "O";//外环
+	str += ",";//时间
+	temp = QString("%1").arg(1000 + ui.spinBox_outlooptime->value() );
+	str += temp.right(3);
+	str += ",";//P
+	temp = QString("%1").arg(QString::number((100 + ui.doubleSpinBox_outloopP->value() +0.001), 'f', 2));
+	str += temp.right(5);
+	str += ",";//I
+	temp = QString("%1").arg(QString::number((100 + ui.doubleSpinBox_outloopI->value() + 0.001), 'f', 2));
+	str += temp.right(5);
+	str += ",";//D
+	temp = QString("%1").arg(QString::number((100 + ui.doubleSpinBox_outloopD->value() + 0.001), 'f', 2));
+	str += temp.right(5);
+	str += ";";
+	str += '\n';
+	my_serialPort->write(str.toLocal8Bit());
+}
+void PID_uppermonitor::on_pushButton_inloopWrite_clicked()
+{
+	changePIDvalue_I();
+	QString str = "@", temp = "";
+	str += DeviceNumber_String;
+	str += "I";//外环
+	str += ",";//时间
+	temp = QString("%1").arg(1000 + ui.spinBox_outlooptime->value());
+	str += temp.right(3);
+	str += ",";//P
+	temp = QString("%1").arg(QString::number((100 + ui.doubleSpinBox_outloopP->value() + 0.001), 'f', 2));
+	str += temp.right(5);
+	str += ",";//I
+	temp = QString("%1").arg(QString::number((100 + ui.doubleSpinBox_outloopI->value() + 0.001), 'f', 2));
+	str += temp.right(5);
+	str += ",";//D
+	temp = QString("%1").arg(QString::number((100 + ui.doubleSpinBox_outloopD->value() + 0.001), 'f', 2));
+	str += temp.right(5);
+	str += ";";
+	str += '\n';
 	my_serialPort->write(str.toLocal8Bit());
 }
 
 
 void PID_uppermonitor::onRadioClickDevice()
 {
-	DeviceNumber = btnGroupDevice->checkedId();
+	changePIDvalue_I();
+	changePIDvalue_O();
+	DeviceNumber_Int = btnGroupDevice->checkedId();
+	DeviceNumber_String = QString("#%1").arg(DeviceNumber_Int);
+	changePIDvalue_O_Inv();
+	changePIDvalue_I_Inv();
+}
+void PID_uppermonitor::changePIDvalue_O()
+{
+	Date[DeviceNumber_Int].Otime = ui.spinBox_outlooptime->value();
+	Date[DeviceNumber_Int].outP = ui.doubleSpinBox_outloopP->value();
+	Date[DeviceNumber_Int].outI = ui.doubleSpinBox_outloopI->value();
+	Date[DeviceNumber_Int].outD = ui.doubleSpinBox_outloopD->value();
+}
+void PID_uppermonitor::changePIDvalue_I()
+{
+	Date[DeviceNumber_Int].Itime = ui.spinBox_inlooptime->value();
+	Date[DeviceNumber_Int].inP = ui.doubleSpinBox_inloopP->value();
+	Date[DeviceNumber_Int].inI = ui.doubleSpinBox_inloopI->value();
+	Date[DeviceNumber_Int].inD = ui.doubleSpinBox_inloopD->value();
+}
+void PID_uppermonitor::changePIDvalue_O_Inv()
+{
+	ui.spinBox_outlooptime->setValue(Date[DeviceNumber_Int].Otime);
+	ui.doubleSpinBox_outloopP->setValue(Date[DeviceNumber_Int].outP);
+	ui.doubleSpinBox_outloopI->setValue(Date[DeviceNumber_Int].outI);
+	ui.doubleSpinBox_outloopD->setValue(Date[DeviceNumber_Int].outD);
+}
+void PID_uppermonitor::changePIDvalue_I_Inv()
+{
+	ui.spinBox_inlooptime->setValue(Date[DeviceNumber_Int].Itime);
+	ui.doubleSpinBox_inloopP->setValue(Date[DeviceNumber_Int].inP);
+	ui.doubleSpinBox_inloopI->setValue(Date[DeviceNumber_Int].inI);
+	ui.doubleSpinBox_inloopD->setValue(Date[DeviceNumber_Int].inD);
 }
