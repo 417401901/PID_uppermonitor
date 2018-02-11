@@ -1,4 +1,5 @@
 <RCC>
-    <qresource prefix="PID_uppermonitor">
+    <qresource prefix="/PID_uppermonitor">
+        <file alias="logo">Resources/SLDXlogo.png</file>
     </qresource>
 </RCC>
