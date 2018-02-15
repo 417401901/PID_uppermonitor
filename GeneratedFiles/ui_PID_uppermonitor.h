@@ -16,6 +16,7 @@
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QDoubleSpinBox>
 #include <QtWidgets/QFrame>
+#include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
@@ -34,7 +35,6 @@ public:
     QVBoxLayout *verticalLayout;
     QFrame *line_8;
     QHBoxLayout *horizontalLayout_2;
-    QFrame *line_13;
     QVBoxLayout *verticalLayout_3;
     QRadioButton *radioButton_0;
     QRadioButton *radioButton_1;
@@ -47,59 +47,52 @@ public:
     QRadioButton *radioButton_7;
     QSpacerItem *horizontalSpacer_2;
     QPushButton *pushButton_freshen;
-    QFrame *line_14;
     QFrame *line_7;
     QVBoxLayout *verticalLayout_2;
-    QFrame *line_6;
     QHBoxLayout *horizontalLayout_3;
-    QFrame *line_4;
     QLabel *label_2;
     QSpacerItem *horizontalSpacer_3;
     QPushButton *pushButton_outloopWrite;
-    QFrame *line_2;
+    QFrame *line;
     QLabel *label;
     QSpacerItem *horizontalSpacer_4;
     QPushButton *pushButton_inloopWrite;
-    QFrame *line_11;
     QHBoxLayout *horizontalLayout_4;
-    QFrame *line_3;
+    QGridLayout *gridLayout_2;
     QLabel *label_3;
     QSpinBox *spinBox_outlooptime;
-    QLabel *label_4;
     QDoubleSpinBox *doubleSpinBox_outloopP;
+    QLabel *label_4;
     QLabel *label_5;
     QDoubleSpinBox *doubleSpinBox_outloopI;
     QLabel *label_6;
     QDoubleSpinBox *doubleSpinBox_outloopD;
-    QFrame *line;
+    QFrame *line_2;
+    QGridLayout *gridLayout_3;
+    QDoubleSpinBox *doubleSpinBox_inloopP;
     QLabel *label_7;
     QSpinBox *spinBox_inlooptime;
     QLabel *label_8;
-    QDoubleSpinBox *doubleSpinBox_inloopP;
     QLabel *label_9;
     QDoubleSpinBox *doubleSpinBox_inloopI;
     QLabel *label_10;
     QDoubleSpinBox *doubleSpinBox_inloopD;
-    QFrame *line_12;
-    QFrame *line_5;
-    QSpacerItem *verticalSpacer;
+    QFrame *line_3;
+    QHBoxLayout *horizontalLayout_Charts;
     QFrame *line_9;
     QHBoxLayout *horizontalLayout;
     QSpacerItem *horizontalSpacer;
     QLabel *label_portName;
     QComboBox *comboBox_portName;
-    QFrame *line_17;
     QLabel *Label_baudRate;
     QComboBox *comboBox_baudRate;
-    QFrame *line_18;
     QPushButton *pushButton_switch;
-    QFrame *line_10;
 
     void setupUi(QWidget *PID_uppermonitorClass)
     {
         if (PID_uppermonitorClass->objectName().isEmpty())
             PID_uppermonitorClass->setObjectName(QStringLiteral("PID_uppermonitorClass"));
-        PID_uppermonitorClass->resize(1085, 679);
+        PID_uppermonitorClass->resize(937, 712);
         verticalLayout = new QVBoxLayout(PID_uppermonitorClass);
         verticalLayout->setSpacing(6);
         verticalLayout->setContentsMargins(11, 11, 11, 11);
@@ -114,13 +107,6 @@ public:
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setSpacing(6);
         horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
-        line_13 = new QFrame(PID_uppermonitorClass);
-        line_13->setObjectName(QStringLiteral("line_13"));
-        line_13->setFrameShape(QFrame::VLine);
-        line_13->setFrameShadow(QFrame::Sunken);
-
-        horizontalLayout_2->addWidget(line_13);
-
         verticalLayout_3 = new QVBoxLayout();
         verticalLayout_3->setSpacing(6);
         verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
@@ -184,13 +170,6 @@ public:
 
         horizontalLayout_2->addWidget(pushButton_freshen);
 
-        line_14 = new QFrame(PID_uppermonitorClass);
-        line_14->setObjectName(QStringLiteral("line_14"));
-        line_14->setFrameShape(QFrame::VLine);
-        line_14->setFrameShadow(QFrame::Sunken);
-
-        horizontalLayout_2->addWidget(line_14);
-
 
         verticalLayout->addLayout(horizontalLayout_2);
 
@@ -204,27 +183,13 @@ public:
         verticalLayout_2 = new QVBoxLayout();
         verticalLayout_2->setSpacing(6);
         verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
-        line_6 = new QFrame(PID_uppermonitorClass);
-        line_6->setObjectName(QStringLiteral("line_6"));
-        line_6->setFrameShape(QFrame::HLine);
-        line_6->setFrameShadow(QFrame::Sunken);
-
-        verticalLayout_2->addWidget(line_6);
-
         horizontalLayout_3 = new QHBoxLayout();
         horizontalLayout_3->setSpacing(6);
         horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
         horizontalLayout_3->setContentsMargins(-1, 0, -1, -1);
-        line_4 = new QFrame(PID_uppermonitorClass);
-        line_4->setObjectName(QStringLiteral("line_4"));
-        line_4->setFrameShape(QFrame::VLine);
-        line_4->setFrameShadow(QFrame::Sunken);
-
-        horizontalLayout_3->addWidget(line_4);
-
         label_2 = new QLabel(PID_uppermonitorClass);
         label_2->setObjectName(QStringLiteral("label_2"));
-        label_2->setMaximumSize(QSize(16777215, 50));
+        label_2->setMaximumSize(QSize(16777215, 40));
         label_2->setLayoutDirection(Qt::LeftToRight);
         label_2->setAlignment(Qt::AlignCenter);
 
@@ -239,17 +204,17 @@ public:
 
         horizontalLayout_3->addWidget(pushButton_outloopWrite);
 
-        line_2 = new QFrame(PID_uppermonitorClass);
-        line_2->setObjectName(QStringLiteral("line_2"));
-        line_2->setFrameShape(QFrame::VLine);
-        line_2->setFrameShadow(QFrame::Sunken);
+        line = new QFrame(PID_uppermonitorClass);
+        line->setObjectName(QStringLiteral("line"));
+        line->setFrameShape(QFrame::VLine);
+        line->setFrameShadow(QFrame::Sunken);
 
-        horizontalLayout_3->addWidget(line_2);
+        horizontalLayout_3->addWidget(line);
 
         label = new QLabel(PID_uppermonitorClass);
         label->setObjectName(QStringLiteral("label"));
         label->setMinimumSize(QSize(0, 60));
-        label->setMaximumSize(QSize(16777215, 50));
+        label->setMaximumSize(QSize(16777215, 40));
         label->setAlignment(Qt::AlignCenter);
 
         horizontalLayout_3->addWidget(label);
@@ -263,139 +228,139 @@ public:
 
         horizontalLayout_3->addWidget(pushButton_inloopWrite);
 
-        line_11 = new QFrame(PID_uppermonitorClass);
-        line_11->setObjectName(QStringLiteral("line_11"));
-        line_11->setFrameShape(QFrame::VLine);
-        line_11->setFrameShadow(QFrame::Sunken);
-
-        horizontalLayout_3->addWidget(line_11);
-
 
         verticalLayout_2->addLayout(horizontalLayout_3);
 
         horizontalLayout_4 = new QHBoxLayout();
         horizontalLayout_4->setSpacing(6);
         horizontalLayout_4->setObjectName(QStringLiteral("horizontalLayout_4"));
-        line_3 = new QFrame(PID_uppermonitorClass);
-        line_3->setObjectName(QStringLiteral("line_3"));
-        line_3->setFrameShape(QFrame::VLine);
-        line_3->setFrameShadow(QFrame::Sunken);
-
-        horizontalLayout_4->addWidget(line_3);
-
+        gridLayout_2 = new QGridLayout();
+        gridLayout_2->setSpacing(6);
+        gridLayout_2->setObjectName(QStringLiteral("gridLayout_2"));
         label_3 = new QLabel(PID_uppermonitorClass);
         label_3->setObjectName(QStringLiteral("label_3"));
-        label_3->setMinimumSize(QSize(0, 60));
+        label_3->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
-        horizontalLayout_4->addWidget(label_3);
+        gridLayout_2->addWidget(label_3, 0, 0, 1, 1);
 
         spinBox_outlooptime = new QSpinBox(PID_uppermonitorClass);
         spinBox_outlooptime->setObjectName(QStringLiteral("spinBox_outlooptime"));
         spinBox_outlooptime->setMaximum(300);
 
-        horizontalLayout_4->addWidget(spinBox_outlooptime);
-
-        label_4 = new QLabel(PID_uppermonitorClass);
-        label_4->setObjectName(QStringLiteral("label_4"));
-
-        horizontalLayout_4->addWidget(label_4);
+        gridLayout_2->addWidget(spinBox_outlooptime, 0, 1, 1, 1);
 
         doubleSpinBox_outloopP = new QDoubleSpinBox(PID_uppermonitorClass);
         doubleSpinBox_outloopP->setObjectName(QStringLiteral("doubleSpinBox_outloopP"));
 
-        horizontalLayout_4->addWidget(doubleSpinBox_outloopP);
+        gridLayout_2->addWidget(doubleSpinBox_outloopP, 0, 3, 1, 1);
+
+        label_4 = new QLabel(PID_uppermonitorClass);
+        label_4->setObjectName(QStringLiteral("label_4"));
+        label_4->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+
+        gridLayout_2->addWidget(label_4, 0, 2, 1, 1);
 
         label_5 = new QLabel(PID_uppermonitorClass);
         label_5->setObjectName(QStringLiteral("label_5"));
+        label_5->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
-        horizontalLayout_4->addWidget(label_5);
+        gridLayout_2->addWidget(label_5, 1, 0, 1, 1);
 
         doubleSpinBox_outloopI = new QDoubleSpinBox(PID_uppermonitorClass);
         doubleSpinBox_outloopI->setObjectName(QStringLiteral("doubleSpinBox_outloopI"));
 
-        horizontalLayout_4->addWidget(doubleSpinBox_outloopI);
+        gridLayout_2->addWidget(doubleSpinBox_outloopI, 1, 1, 1, 1);
 
         label_6 = new QLabel(PID_uppermonitorClass);
         label_6->setObjectName(QStringLiteral("label_6"));
+        label_6->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
-        horizontalLayout_4->addWidget(label_6);
+        gridLayout_2->addWidget(label_6, 1, 2, 1, 1);
 
         doubleSpinBox_outloopD = new QDoubleSpinBox(PID_uppermonitorClass);
         doubleSpinBox_outloopD->setObjectName(QStringLiteral("doubleSpinBox_outloopD"));
 
-        horizontalLayout_4->addWidget(doubleSpinBox_outloopD);
+        gridLayout_2->addWidget(doubleSpinBox_outloopD, 1, 3, 1, 1);
 
-        line = new QFrame(PID_uppermonitorClass);
-        line->setObjectName(QStringLiteral("line"));
-        line->setFrameShape(QFrame::VLine);
-        line->setFrameShadow(QFrame::Sunken);
 
-        horizontalLayout_4->addWidget(line);
+        horizontalLayout_4->addLayout(gridLayout_2);
+
+        line_2 = new QFrame(PID_uppermonitorClass);
+        line_2->setObjectName(QStringLiteral("line_2"));
+        line_2->setFrameShape(QFrame::VLine);
+        line_2->setFrameShadow(QFrame::Sunken);
+
+        horizontalLayout_4->addWidget(line_2);
+
+        gridLayout_3 = new QGridLayout();
+        gridLayout_3->setSpacing(6);
+        gridLayout_3->setObjectName(QStringLiteral("gridLayout_3"));
+        doubleSpinBox_inloopP = new QDoubleSpinBox(PID_uppermonitorClass);
+        doubleSpinBox_inloopP->setObjectName(QStringLiteral("doubleSpinBox_inloopP"));
+
+        gridLayout_3->addWidget(doubleSpinBox_inloopP, 0, 3, 1, 1);
 
         label_7 = new QLabel(PID_uppermonitorClass);
         label_7->setObjectName(QStringLiteral("label_7"));
+        label_7->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
-        horizontalLayout_4->addWidget(label_7);
+        gridLayout_3->addWidget(label_7, 0, 0, 1, 1);
 
         spinBox_inlooptime = new QSpinBox(PID_uppermonitorClass);
         spinBox_inlooptime->setObjectName(QStringLiteral("spinBox_inlooptime"));
         spinBox_inlooptime->setMaximum(300);
 
-        horizontalLayout_4->addWidget(spinBox_inlooptime);
+        gridLayout_3->addWidget(spinBox_inlooptime, 0, 1, 1, 1);
 
         label_8 = new QLabel(PID_uppermonitorClass);
         label_8->setObjectName(QStringLiteral("label_8"));
+        label_8->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
-        horizontalLayout_4->addWidget(label_8);
-
-        doubleSpinBox_inloopP = new QDoubleSpinBox(PID_uppermonitorClass);
-        doubleSpinBox_inloopP->setObjectName(QStringLiteral("doubleSpinBox_inloopP"));
-
-        horizontalLayout_4->addWidget(doubleSpinBox_inloopP);
+        gridLayout_3->addWidget(label_8, 0, 2, 1, 1);
 
         label_9 = new QLabel(PID_uppermonitorClass);
         label_9->setObjectName(QStringLiteral("label_9"));
+        label_9->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
-        horizontalLayout_4->addWidget(label_9);
+        gridLayout_3->addWidget(label_9, 1, 0, 1, 1);
 
         doubleSpinBox_inloopI = new QDoubleSpinBox(PID_uppermonitorClass);
         doubleSpinBox_inloopI->setObjectName(QStringLiteral("doubleSpinBox_inloopI"));
 
-        horizontalLayout_4->addWidget(doubleSpinBox_inloopI);
+        gridLayout_3->addWidget(doubleSpinBox_inloopI, 1, 1, 1, 1);
 
         label_10 = new QLabel(PID_uppermonitorClass);
         label_10->setObjectName(QStringLiteral("label_10"));
+        label_10->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
-        horizontalLayout_4->addWidget(label_10);
+        gridLayout_3->addWidget(label_10, 1, 2, 1, 1);
 
         doubleSpinBox_inloopD = new QDoubleSpinBox(PID_uppermonitorClass);
         doubleSpinBox_inloopD->setObjectName(QStringLiteral("doubleSpinBox_inloopD"));
 
-        horizontalLayout_4->addWidget(doubleSpinBox_inloopD);
+        gridLayout_3->addWidget(doubleSpinBox_inloopD, 1, 3, 1, 1);
 
-        line_12 = new QFrame(PID_uppermonitorClass);
-        line_12->setObjectName(QStringLiteral("line_12"));
-        line_12->setFrameShape(QFrame::VLine);
-        line_12->setFrameShadow(QFrame::Sunken);
 
-        horizontalLayout_4->addWidget(line_12);
+        horizontalLayout_4->addLayout(gridLayout_3);
 
 
         verticalLayout_2->addLayout(horizontalLayout_4);
 
-        line_5 = new QFrame(PID_uppermonitorClass);
-        line_5->setObjectName(QStringLiteral("line_5"));
-        line_5->setFrameShape(QFrame::HLine);
-        line_5->setFrameShadow(QFrame::Sunken);
-
-        verticalLayout_2->addWidget(line_5);
-
 
         verticalLayout->addLayout(verticalLayout_2);
 
-        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+        line_3 = new QFrame(PID_uppermonitorClass);
+        line_3->setObjectName(QStringLiteral("line_3"));
+        line_3->setFrameShape(QFrame::HLine);
+        line_3->setFrameShadow(QFrame::Sunken);
 
-        verticalLayout->addItem(verticalSpacer);
+        verticalLayout->addWidget(line_3);
+
+        horizontalLayout_Charts = new QHBoxLayout();
+        horizontalLayout_Charts->setSpacing(6);
+        horizontalLayout_Charts->setObjectName(QStringLiteral("horizontalLayout_Charts"));
+
+        verticalLayout->addLayout(horizontalLayout_Charts);
 
         line_9 = new QFrame(PID_uppermonitorClass);
         line_9->setObjectName(QStringLiteral("line_9"));
@@ -424,13 +389,6 @@ public:
 
         horizontalLayout->addWidget(comboBox_portName);
 
-        line_17 = new QFrame(PID_uppermonitorClass);
-        line_17->setObjectName(QStringLiteral("line_17"));
-        line_17->setFrameShape(QFrame::VLine);
-        line_17->setFrameShadow(QFrame::Sunken);
-
-        horizontalLayout->addWidget(line_17);
-
         Label_baudRate = new QLabel(PID_uppermonitorClass);
         Label_baudRate->setObjectName(QStringLiteral("Label_baudRate"));
         Label_baudRate->setEnabled(true);
@@ -445,13 +403,6 @@ public:
 
         horizontalLayout->addWidget(comboBox_baudRate);
 
-        line_18 = new QFrame(PID_uppermonitorClass);
-        line_18->setObjectName(QStringLiteral("line_18"));
-        line_18->setFrameShape(QFrame::VLine);
-        line_18->setFrameShadow(QFrame::Sunken);
-
-        horizontalLayout->addWidget(line_18);
-
         pushButton_switch = new QPushButton(PID_uppermonitorClass);
         pushButton_switch->setObjectName(QStringLiteral("pushButton_switch"));
 
@@ -459,13 +410,6 @@ public:
 
 
         verticalLayout->addLayout(horizontalLayout);
-
-        line_10 = new QFrame(PID_uppermonitorClass);
-        line_10->setObjectName(QStringLiteral("line_10"));
-        line_10->setFrameShape(QFrame::HLine);
-        line_10->setFrameShadow(QFrame::Sunken);
-
-        verticalLayout->addWidget(line_10);
 
 
         retranslateUi(PID_uppermonitorClass);
