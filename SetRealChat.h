@@ -8,7 +8,7 @@
 #include <QtCore/QTimer>
 #include <QList>
 #include <QtCharts/QChartGlobal>
-#include <QChartView>
+#include <QtCharts/QChartView>
 QT_CHARTS_USE_NAMESPACE
 
 class SetRealChat : public QChart

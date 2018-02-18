@@ -14,7 +14,7 @@ PID_uppermonitor::PID_uppermonitor(QWidget *parent)
 		QSerialPort serial;//声明串口
 		serial.setPort(Info);
 
-		if (serial.open(QIODevice::ReadWrite))//如果串口是可以读写方式打开的
+	//	if (serial.open(QIODevice::ReadWrite))//如果串口是可以读写方式打开的
 		{
 			ui.comboBox_portName->addItem(Info.portName());//在comboBox那添加串口号
 			serial.setDataTerminalReady(true);
